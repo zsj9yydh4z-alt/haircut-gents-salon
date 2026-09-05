@@ -1,0 +1,1810 @@
+# haircut-gents-salon<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1116" />
+  <meta name="description" content="Haircut Gents Salon — refined men's grooming in Dubai Marina. Haircuts, beard styling and premium grooming." />
+
+  <title>Haircut Gents Salon — Dubai Marina</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #0b1116;
+      --navy-2: #101820;
+      --navy-3: #151f27;
+
+      --ivory: #f4f0e8;
+      --ivory-2: #ddd6c9;
+      --stone: #aaa398;
+
+      --champagne: #c8b58a;
+      --champagne-light: #dfd0aa;
+
+      --white: #ffffff;
+      --line: rgba(244,240,232,.12);
+
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+
+      --max: 1320px;
+      --ease: cubic-bezier(.22,1,.36,1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--navy);
+    }
+
+    body {
+      background: var(--navy);
+      color: var(--ivory);
+      font-family: var(--sans);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(calc(100% - 48px), var(--max));
+      margin: auto;
+    }
+
+    /* =========================
+       ANNOUNCEMENT
+    ========================= */
+
+    .announcement {
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--line);
+      color: var(--stone);
+      font-size: 10px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      position: fixed;
+      top: 34px;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: .4s var(--ease);
+    }
+
+    header.scrolled {
+      top: 0;
+      background: rgba(11,17,22,.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      width: min(calc(100% - 48px), var(--max));
+      height: 86px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .logo-mark {
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(200,181,138,.65);
+      display: grid;
+      place-items: center;
+      font-family: var(--serif);
+      font-size: 17px;
+      color: var(--champagne-light);
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .logo-main {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    .logo-sub {
+      margin-top: 6px;
+      color: var(--stone);
+      font-size: 8px;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: var(--ivory-2);
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: .3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+      width: 0;
+      height: 1px;
+      background: var(--champagne);
+      transition: .35s var(--ease);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      border: 1px solid rgba(200,181,138,.55);
+      padding: 13px 19px;
+      color: var(--ivory);
+      font-size: 10px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      transition: .35s var(--ease);
+    }
+
+    .nav-cta:hover {
+      background: var(--champagne);
+      color: var(--navy);
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: var(--ivory);
+      cursor: pointer;
+      width: 42px;
+      height: 42px;
+      position: relative;
+    }
+
+    .menu-btn span {
+      position: absolute;
+      left: 10px;
+      width: 22px;
+      height: 1px;
+      background: var(--ivory);
+      transition: .3s;
+    }
+
+    .menu-btn span:first-child {
+      top: 16px;
+    }
+
+    .menu-btn span:last-child {
+      top: 25px;
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100svh;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background: var(--navy);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(8,13,18,.92) 0%, rgba(8,13,18,.60) 42%, rgba(8,13,18,.28) 100%),
+        linear-gradient(0deg, rgba(8,13,18,.90) 0%, rgba(8,13,18,.05) 58%),
+        url("images/interior-wide.webp") center/cover no-repeat;
+      transform: scale(1.015);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(115deg, rgba(200,181,138,.08), transparent 35%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(calc(100% - 48px), var(--max));
+      margin: 0 auto;
+      padding: 170px 0 78px;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      color: var(--champagne-light);
+      font-size: 10px;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      margin-bottom: 27px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: var(--champagne);
+    }
+
+    h1 {
+      max-width: 850px;
+      font-family: var(--serif);
+      font-size: clamp(62px, 8vw, 118px);
+      font-weight: 400;
+      line-height: .89;
+      letter-spacing: -.045em;
+    }
+
+    h1 em {
+      color: var(--champagne-light);
+      font-weight: 400;
+    }
+
+    .hero-description {
+      max-width: 500px;
+      margin-top: 34px;
+      color: var(--ivory-2);
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    .hero-actions {
+      margin-top: 38px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 25px;
+      border: 1px solid transparent;
+      font-size: 10px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      transition: .4s var(--ease);
+    }
+
+    .btn-primary {
+      background: var(--ivory);
+      color: var(--navy);
+    }
+
+    .btn-primary:hover {
+      background: var(--champagne-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border-color: rgba(244,240,232,.25);
+      color: var(--ivory);
+      background: rgba(11,17,22,.18);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--champagne);
+      color: var(--champagne-light);
+    }
+
+    .hero-bottom {
+      margin-top: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      max-width: 980px;
+    }
+
+    .hero-rating {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .rating-number {
+      font-family: var(--serif);
+      font-size: 30px;
+      color: var(--white);
+    }
+
+    .stars {
+      color: var(--champagne-light);
+      letter-spacing: 3px;
+      font-size: 11px;
+    }
+
+    .rating-copy {
+      color: var(--stone);
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .scroll-note {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      color: var(--stone);
+      font-size: 9px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    .scroll-line {
+      width: 45px;
+      height: 1px;
+      background: var(--stone);
+    }
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .intro {
+      padding: 130px 0;
+      background: var(--ivory);
+      color: var(--navy);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 100px;
+      align-items: start;
+    }
+
+    .section-label {
+      color: #827c72;
+      font-size: 10px;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+    }
+
+    .intro h2 {
+      margin-top: 25px;
+      max-width: 800px;
+      font-family: var(--serif);
+      font-size: clamp(42px, 5.5vw, 78px);
+      font-weight: 400;
+      line-height: .98;
+      letter-spacing: -.035em;
+    }
+
+    .intro h2 em {
+      color: #8e7c58;
+    }
+
+    .intro-copy {
+      max-width: 530px;
+      padding-top: 48px;
+      color: #676158;
+      font-size: 15px;
+      line-height: 1.9;
+      font-weight: 300;
+    }
+
+    /* =========================
+       SERVICES
+    ========================= */
+
+    .services {
+      padding: 135px 0;
+      background: var(--navy);
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .section-head h2 {
+      margin-top: 18px;
+      font-family: var(--serif);
+      font-size: clamp(44px, 5vw, 72px);
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .section-head p {
+      max-width: 360px;
+      color: var(--stone);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .service-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .service {
+      min-height: 125px;
+      display: grid;
+      grid-template-columns: 80px 1fr 280px 30px;
+      align-items: center;
+      gap: 25px;
+      border-bottom: 1px solid var(--line);
+      transition: .4s var(--ease);
+    }
+
+    .service:hover {
+      padding-left: 16px;
+      background: rgba(255,255,255,.018);
+    }
+
+    .service-num {
+      color: var(--champagne);
+      font-family: var(--serif);
+      font-size: 17px;
+    }
+
+    .service-name {
+      font-family: var(--serif);
+      font-size: clamp(25px, 3vw, 36px);
+      font-weight: 400;
+    }
+
+    .service-desc {
+      color: var(--stone);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .service-arrow {
+      color: var(--champagne);
+      font-size: 20px;
+    }
+
+    /* =========================
+       EXPERIENCE
+    ========================= */
+
+    .experience {
+      padding: 0 0 140px;
+      background: var(--navy);
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      min-height: 620px;
+    }
+
+    .experience-image {
+      min-height: 620px;
+      background:
+        linear-gradient(0deg, rgba(11,17,22,.3), transparent),
+        url("images/products.webp") center/cover no-repeat;
+    }
+
+    .experience-copy {
+      padding: 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--navy-2);
+      border: 1px solid var(--line);
+      border-left: 0;
+    }
+
+    .experience-copy h2 {
+      margin: 22px 0 30px;
+      font-family: var(--serif);
+      font-size: clamp(42px, 4.7vw, 68px);
+      font-weight: 400;
+      line-height: .98;
+    }
+
+    .experience-copy p {
+      color: var(--stone);
+      max-width: 420px;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .experience-details {
+      margin-top: 40px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .detail {
+      display: flex;
+      gap: 13px;
+      align-items: center;
+      color: var(--ivory-2);
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .detail::before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      border: 1px solid var(--champagne);
+      transform: rotate(45deg);
+    }
+
+    /* =========================
+       MANIFESTO
+    ========================= */
+
+    .manifesto {
+      padding: 155px 0;
+      background: var(--ivory);
+      color: var(--navy);
+      text-align: center;
+    }
+
+    .manifesto h2 {
+      max-width: 1050px;
+      margin: 28px auto 0;
+      font-family: var(--serif);
+      font-size: clamp(48px, 7vw, 100px);
+      line-height: .94;
+      font-weight: 400;
+      letter-spacing: -.045em;
+    }
+
+    .manifesto h2 em {
+      color: #8f7b54;
+    }
+
+    /* =========================
+       GALLERY
+    ========================= */
+
+    .gallery-section {
+      padding: 135px 0;
+      background: var(--navy);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr .75fr;
+      grid-template-rows: 330px 330px;
+      gap: 12px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      position: relative;
+      background: var(--navy-3);
+    }
+
+    .gallery-item.large {
+      grid-row: span 2;
+    }
+
+    .gallery-item img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform .9s var(--ease);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.045);
+    }
+
+    .gallery-item::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(11,17,22,.38), transparent 50%);
+      pointer-events: none;
+    }
+
+    /* =========================
+       REVIEWS
+    ========================= */
+
+    .reviews {
+      padding: 135px 0;
+      background: var(--navy-2);
+    }
+
+    .review-top {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 80px;
+      align-items: end;
+      margin-bottom: 70px;
+    }
+
+    .review-score {
+      font-family: var(--serif);
+      font-size: 110px;
+      line-height: .8;
+      color: var(--ivory);
+    }
+
+    .review-score-label {
+      margin-top: 20px;
+      color: var(--stone);
+      font-size: 10px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .review-top h2 {
+      font-family: var(--serif);
+      font-size: clamp(42px, 5vw, 70px);
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .review-top p {
+      max-width: 500px;
+      margin-top: 22px;
+      color: var(--stone);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .review {
+      min-height: 260px;
+      padding: 38px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .review-stars {
+      color: var(--champagne-light);
+      font-size: 11px;
+      letter-spacing: 3px;
+    }
+
+    .review blockquote {
+      margin-top: 25px;
+      color: var(--ivory-2);
+      font-family: var(--serif);
+      font-size: 20px;
+      line-height: 1.5;
+    }
+
+    .review-name {
+      margin-top: auto;
+      padding-top: 30px;
+      color: var(--stone);
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .reviews-link {
+      margin-top: 35px;
+      color: var(--champagne-light);
+      font-size: 10px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      display: inline-flex;
+      gap: 10px;
+    }
+
+    /* =========================
+       LOCATION
+    ========================= */
+
+    .location {
+      padding: 135px 0;
+      background: var(--ivory);
+      color: var(--navy);
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 70px;
+      align-items: stretch;
+    }
+
+    .location-copy {
+      padding: 20px 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .location-copy h2 {
+      margin-top: 22px;
+      font-family: var(--serif);
+      font-size: clamp(46px, 5vw, 75px);
+      line-height: .95;
+      font-weight: 400;
+    }
+
+    .address {
+      margin-top: 35px;
+      color: #686158;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .hours {
+      margin-top: 38px;
+      border-top: 1px solid rgba(11,17,22,.14);
+      border-bottom: 1px solid rgba(11,17,22,.14);
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(11,17,22,.08);
+      color: #575149;
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .hours-row:last-child {
+      border-bottom: 0;
+    }
+
+    .location-actions {
+      margin-top: auto;
+      padding-top: 45px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .dark-btn {
+      background: var(--navy);
+      color: var(--ivory);
+    }
+
+    .outline-dark {
+      border-color: rgba(11,17,22,.28);
+      color: var(--navy);
+    }
+
+    .outline-dark:hover {
+      border-color: var(--navy);
+      background: var(--navy);
+      color: var(--ivory);
+    }
+
+    .map-wrap {
+      min-height: 580px;
+      background: #d9d4ca;
+      overflow: hidden;
+    }
+
+    .map-wrap iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 580px;
+      border: 0;
+      filter: grayscale(1) contrast(.9);
+    }
+
+    /* =========================
+       FINAL CTA
+    ========================= */
+
+    .final-cta {
+      padding: 150px 0;
+      text-align: center;
+      background:
+        linear-gradient(rgba(11,17,22,.83), rgba(11,17,22,.93)),
+        url("images/exterior.webp") center/cover no-repeat;
+    }
+
+    .final-cta h2 {
+      max-width: 850px;
+      margin: 25px auto 0;
+      font-family: var(--serif);
+      font-size: clamp(48px, 7vw, 100px);
+      font-weight: 400;
+      line-height: .94;
+      letter-spacing: -.04em;
+    }
+
+    .final-cta h2 em {
+      color: var(--champagne-light);
+    }
+
+    .final-cta p {
+      max-width: 470px;
+      margin: 28px auto 0;
+      color: var(--stone);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .final-actions {
+      margin-top: 38px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 50px 0 30px;
+      background: #080d12;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-main {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    .footer-brand {
+      font-family: var(--serif);
+      font-size: 26px;
+    }
+
+    .footer-brand span {
+      display: block;
+      margin-top: 8px;
+      color: var(--stone);
+      font-family: var(--sans);
+      font-size: 9px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      color: var(--stone);
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .footer-links a:hover {
+      color: var(--ivory);
+    }
+
+    .footer-bottom {
+      margin-top: 70px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: #77736c;
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    /* =========================
+       WHATSAPP
+    ========================= */
+
+    .whatsapp {
+      position: fixed;
+      z-index: 999;
+      right: 24px;
+      bottom: 24px;
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      background: var(--ivory);
+      color: var(--navy);
+      border-radius: 50%;
+      box-shadow: 0 15px 40px rgba(0,0,0,.3);
+      font-size: 17px;
+      transition: .35s var(--ease);
+    }
+
+    .whatsapp:hover {
+      transform: translateY(-4px) scale(1.04);
+      background: var(--champagne-light);
+    }
+
+    /* =========================
+       REVEAL
+    ========================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity .9s var(--ease), transform .9s var(--ease);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 900px) {
+
+      .container,
+      .nav,
+      .hero-content {
+        width: min(calc(100% - 32px), var(--max));
+      }
+
+      .announcement {
+        font-size: 8px;
+        letter-spacing: .16em;
+      }
+
+      header {
+        top: 34px;
+      }
+
+      .nav {
+        height: 74px;
+      }
+
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .mobile-menu {
+        position: fixed;
+        top: 108px;
+        left: 16px;
+        right: 16px;
+        z-index: 998;
+        padding: 12px;
+        background: rgba(11,17,22,.97);
+        border: 1px solid var(--line);
+        backdrop-filter: blur(20px);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: .3s var(--ease);
+      }
+
+      .mobile-menu.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .mobile-menu a {
+        display: block;
+        padding: 17px 15px;
+        border-bottom: 1px solid var(--line);
+        color: var(--ivory-2);
+        font-size: 11px;
+        letter-spacing: .15em;
+        text-transform: uppercase;
+      }
+
+      .mobile-menu a:last-child {
+        border-bottom: 0;
+      }
+
+      .hero-content {
+        padding: 170px 0 55px;
+      }
+
+      h1 {
+        font-size: clamp(54px, 17vw, 88px);
+      }
+
+      .hero-description {
+        font-size: 14px;
+      }
+
+      .hero-bottom {
+        margin-top: 52px;
+        display: block;
+      }
+
+      .scroll-note {
+        margin-top: 25px;
+      }
+
+      .intro,
+      .services,
+      .gallery-section,
+      .reviews,
+      .location {
+        padding: 90px 0;
+      }
+
+      .intro-grid,
+      .review-top,
+      .location-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .intro-copy {
+        padding-top: 0;
+      }
+
+      .section-head {
+        display: block;
+        margin-bottom: 40px;
+      }
+
+      .section-head p {
+        margin-top: 22px;
+      }
+
+      .service {
+        grid-template-columns: 40px 1fr 20px;
+        min-height: 105px;
+        gap: 10px;
+      }
+
+      .service-desc {
+        display: none;
+      }
+
+      .experience {
+        padding-bottom: 90px;
+      }
+
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-image {
+        min-height: 450px;
+      }
+
+      .experience-copy {
+        padding: 50px 28px;
+        border-left: 1px solid var(--line);
+        border-top: 0;
+      }
+
+      .manifesto {
+        padding: 100px 20px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 300px 220px 220px;
+      }
+
+      .gallery-item.large {
+        grid-row: span 1;
+        grid-column: span 2;
+      }
+
+      .review-score {
+        font-size: 88px;
+      }
+
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .review {
+        min-height: 235px;
+        padding: 30px;
+      }
+
+      .location-grid {
+        gap: 45px;
+      }
+
+      .map-wrap,
+      .map-wrap iframe {
+        min-height: 420px;
+      }
+
+      .final-cta {
+        padding: 110px 20px;
+      }
+
+      .footer-main,
+      .footer-bottom {
+        display: block;
+      }
+
+      .footer-links {
+        margin-top: 35px;
+      }
+
+      .footer-bottom div + div {
+        margin-top: 10px;
+      }
+
+      .whatsapp {
+        right: 17px;
+        bottom: 17px;
+        width: 52px;
+        height: 52px;
+      }
+    }
+
+    @media (max-width: 520px) {
+
+      .logo-main {
+        font-size: 11px;
+      }
+
+      .logo-sub {
+        font-size: 7px;
+      }
+
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 300px);
+      }
+
+      .gallery-item.large {
+        grid-column: auto;
+      }
+
+      .gallery-item:nth-child(n) {
+        grid-column: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="announcement">
+    Dubai Marina · Men's Grooming · Open Daily 9:00 — 00:00
+  </div>
+
+  <header id="header">
+    <nav class="nav">
+
+      <a href="#top" class="logo">
+        <div class="logo-mark">HG</div>
+        <div class="logo-text">
+          <div class="logo-main">Haircut Gents</div>
+          <div class="logo-sub">Dubai Marina</div>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#experience">Experience</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#location">Location</a>
+      </div>
+
+      <a href="https://wa.me/971507306641?text=Hello%20Haircut%20Gents%20Salon%2C%20I%27d%20like%20to%20book%20an%20appointment." class="nav-cta">
+        Book Now
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+        <span></span>
+        <span></span>
+      </button>
+
+    </nav>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services">Services</a>
+    <a href="#experience">Experience</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#location">Location</a>
+    <a href="https://wa.me/971507306641?text=Hello%20Haircut%20Gents%20Salon%2C%20I%27d%20like%20to%20book%20an%20appointment.">Book an Appointment</a>
+  </div>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <div class="hero-bg"></div>
+
+      <div class="hero-content reveal">
+
+        <div class="eyebrow">
+          Haircut Gents Salon
+        </div>
+
+        <h1>
+          Your time.<br>
+          Your <em>ritual.</em>
+        </h1>
+
+        <p class="hero-description">
+          Precision grooming in the heart of Dubai Marina.
+          A refined space for men who appreciate good service,
+          considered style and the details that make the difference.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary"
+             href="https://wa.me/971507306641?text=Hello%20Haircut%20Gents%20Salon%2C%20I%27d%20like%20to%20book%20an%20appointment.">
+            Book on WhatsApp
+          </a>
+
+          <a class="btn btn-secondary" href="#location">
+            Find the Salon
+          </a>
+        </div>
+
+        <div class="hero-bottom">
+
+          <div class="hero-rating">
+            <div class="rating-number">4.7</div>
+            <div>
+              <div class="stars">★★★★★</div>
+              <div class="rating-copy">263 Google Reviews</div>
+            </div>
+          </div>
+
+          <div class="scroll-note">
+            Explore
+            <span class="scroll-line"></span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- INTRO -->
+    <section class="intro">
+      <div class="container">
+        <div class="intro-grid reveal">
+
+          <div>
+            <div class="section-label">The philosophy</div>
+          </div>
+
+          <div>
+            <h2>
+              Looking sharp is not the goal.
+              <em>Feeling right is.</em>
+            </h2>
+
+            <p class="intro-copy">
+              Haircut Gents Salon brings precision, atmosphere and personal
+              attention together under one roof. From the first consultation
+              to the final detail, every visit is built around making you
+              leave feeling composed, confident and ready for what comes next.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <div>
+            <div class="section-label">The menu</div>
+            <h2>Grooming,<br>refined.</h2>
+          </div>
+
+          <p>
+            Every service is approached with the same principle:
+            precision first, unnecessary noise never.
+          </p>
+        </div>
+
+        <div class="service-list reveal">
+
+          <div class="service">
+            <div class="service-num">01</div>
+            <div class="service-name">Signature Haircut</div>
+            <div class="service-desc">
+              A considered cut tailored to your face, hair and personal style.
+            </div>
+            <div class="service-arrow">↗</div>
+          </div>
+
+          <div class="service">
+            <div class="service-num">02</div>
+            <div class="service-name">Beard Styling</div>
+            <div class="service-desc">
+              Shape, definition and clean detailing for a sharper finish.
+            </div>
+            <div class="service-arrow">↗</div>
+          </div>
+
+          <div class="service">
+            <div class="service-num">03</div>
+            <div class="service-name">Hair Coloring</div>
+            <div class="service-desc">
+              Professional colour work designed around the desired result.
+            </div>
+            <div class="service-arrow">↗</div>
+          </div>
+
+          <div class="service">
+            <div class="service-num">04</div>
+            <div class="service-name">Hair Extensions</div>
+            <div class="service-desc">
+              Extended styling solutions for clients looking for more.
+            </div>
+            <div class="service-arrow">↗</div>
+          </div>
+
+          <div class="service">
+            <div class="service-num">05</div>
+            <div class="service-name">Facial Care</div>
+            <div class="service-desc">
+              Grooming treatments designed to complete the experience.
+            </div>
+            <div class="service-arrow">↗</div>
+          </div>
+
+          <div class="service">
+            <div class="service-num">06</div>
+            <div class="service-name">Keratin & Protein</div>
+            <div class="service-desc">
+              Hair treatments focused on condition, texture and finish.
+            </div>
+            <div class="service-arrow">↗</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="experience" id="experience">
+      <div class="container">
+
+        <div class="experience-grid reveal">
+
+          <div class="experience-image"></div>
+
+          <div class="experience-copy">
+            <div class="section-label">The experience</div>
+
+            <h2>
+              More than<br>
+              a haircut.
+            </h2>
+
+            <p>
+              Step away from the noise of Dubai and into a space designed
+              around you. Take your time. Let the details be handled.
+              Leave looking exactly the way you wanted to.
+            </p>
+
+            <div class="experience-details">
+              <div class="detail">Personal attention</div>
+              <div class="detail">Refined atmosphere</div>
+              <div class="detail">Dubai Marina location</div>
+              <div class="detail">Open until midnight</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MANIFESTO -->
+    <section class="manifesto">
+      <div class="container reveal">
+
+        <div class="section-label">The standard</div>
+
+        <h2>
+          Precision is not a luxury.<br>
+          <em>It is the standard.</em>
+        </h2>
+
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery-section" id="gallery">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <div>
+            <div class="section-label">Inside Haircut Gents</div>
+            <h2>The craft.</h2>
+          </div>
+
+          <p>
+            A glimpse of the space, the work and the details behind
+            the finished look.
+          </p>
+        </div>
+
+        <div class="gallery-grid reveal">
+
+          <div class="gallery-item large">
+            <img src="images/exterior.webp"
+                 alt="Haircut Gents Salon exterior"
+                 loading="lazy">
+          </div>
+
+          <div class="gallery-item">
+            <img src="images/products.webp"
+                 alt="Haircut Gents Salon interior"
+                 loading="lazy">
+          </div>
+
+          <div class="gallery-item">
+            <img src="images/portrait-classic.webp"
+                 alt="Haircut Gents haircut"
+                 loading="lazy">
+          </div>
+
+          <div class="gallery-item">
+            <img src="images/portrait-beard.webp"
+                 alt="Haircut Gents beard styling"
+                 loading="lazy">
+          </div>
+
+          <div class="gallery-item">
+            <img src="images/portrait-bw.webp"
+                 alt="Haircut Gents grooming"
+                 loading="lazy">
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews" id="reviews">
+      <div class="container">
+
+        <div class="review-top reveal">
+
+          <div>
+            <div class="review-score">4.7</div>
+            <div class="review-score-label">
+              Google rating · 263 reviews
+            </div>
+          </div>
+
+          <div>
+            <div class="section-label">Guest experiences</div>
+
+            <h2>
+              The best part<br>
+              is what people say after.
+            </h2>
+
+            <p>
+              Hundreds of guests have taken the time to share their
+              experience. Here are a few of the voices behind the rating.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="review-grid reveal">
+
+          <!-- KEEP / REPLACE THESE WITH THE EXACT REVIEWS YOU HAVE -->
+          <article class="review">
+            <div class="review-stars">★★★★★</div>
+            <blockquote>
+              “Excellent service, professional work and a great atmosphere.”
+            </blockquote>
+            <div class="review-name">Google Guest</div>
+          </article>
+
+          <article class="review">
+            <div class="review-stars">★★★★★</div>
+            <blockquote>
+              “Very professional team. The haircut was exactly what I wanted.”
+            </blockquote>
+            <div class="review-name">Google Guest</div>
+          </article>
+
+          <article class="review">
+            <div class="review-stars">★★★★★</div>
+            <blockquote>
+              “Great attention to detail and a very comfortable experience.”
+            </blockquote>
+            <div class="review-name">Google Guest</div>
+          </article>
+
+        </div>
+
+        <!-- Replace this URL with the exact business Google Maps URL once verified -->
+        <a class="reviews-link"
+           href="https://www.google.com/maps/search/?api=1&query=Haircut%20Gents%20Salon%2C%20Al%20Seba%20St%2C%20Dubai%20Marina%2C%20Dubai"
+           target="_blank"
+           rel="noopener">
+          View all Google reviews ↗
+        </a>
+
+      </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section class="location" id="location">
+      <div class="container">
+
+        <div class="location-grid reveal">
+
+          <div class="location-copy">
+
+            <div class="section-label">Visit us</div>
+
+            <h2>
+              Come in.<br>
+              Sit down.<br>
+              <em>Relax.</em>
+            </h2>
+
+            <p class="address">
+              Al Seba St<br>
+              Dubai Marina<br>
+              Dubai, United Arab Emirates
+            </p>
+
+            <div class="hours">
+
+              <div class="hours-row">
+                <span>Monday — Sunday</span>
+                <span>9:00 — 00:00</span>
+              </div>
+
+              <div class="hours-row">
+                <span>Phone</span>
+                <span>+971 50 730 6641</span>
+              </div>
+
+            </div>
+
+            <div class="location-actions">
+
+              <a class="btn dark-btn"
+                 href="https://wa.me/971507306641?text=Hello%20Haircut%20Gents%20Salon%2C%20I%27d%20like%20to%20book%20an%20appointment.">
+                WhatsApp
+              </a>
+
+              <a class="btn outline-dark"
+                 href="tel:+971507306641">
+                Call Salon
+              </a>
+
+              <a class="btn outline-dark"
+                 href="https://www.google.com/maps/search/?api=1&query=Haircut%20Gents%20Salon%2C%20Al%20Seba%20St%2C%20Dubai%20Marina%2C%20Dubai"
+                 target="_blank"
+                 rel="noopener">
+                Get Directions
+              </a>
+
+            </div>
+
+          </div>
+
+          <div class="map-wrap">
+            <iframe
+              title="Haircut Gents Salon location"
+              src="https://www.google.com/maps?q=Haircut%20Gents%20Salon%2C%20Al%20Seba%20St%2C%20Dubai%20Marina%2C%20Dubai%2C%20United%20Arab%20Emirates&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+      <div class="container reveal">
+
+        <div class="section-label">
+          Your next appointment
+        </div>
+
+        <h2>
+          Leave looking<br>
+          <em>like yourself.</em>
+        </h2>
+
+        <p>
+          Ready when you are. Contact Haircut Gents Salon directly
+          and arrange your next visit in Dubai Marina.
+        </p>
+
+        <div class="final-actions">
+
+          <a class="btn btn-primary"
+             href="https://wa.me/971507306641?text=Hello%20Haircut%20Gents%20Salon%2C%20I%27d%20like%20to%20book%20an%20appointment.">
+            Book on WhatsApp
+          </a>
+
+          <a class="btn btn-secondary"
+             href="tel:+971507306641">
+            +971 50 730 6641
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+
+      <div class="footer-main">
+
+        <div class="footer-brand">
+          Haircut Gents
+          <span>Dubai Marina · Men's Grooming</span>
+        </div>
+
+        <div class="footer-links">
+          <a href="#services">Services</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#location">Location</a>
+          <a href="https://wa.me/971507306641">WhatsApp</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Haircut Gents Salon</div>
+        <div>Dubai Marina, UAE</div>
+      </div>
+
+    </div>
+  </footer>
+
+  <a class="whatsapp"
+     href="https://wa.me/971507306641?text=Hello%20Haircut%20Gents%20Salon%2C%20I%27d%20like%20to%20book%20an%20appointment."
+     aria-label="WhatsApp Haircut Gents Salon">
+    WA
+  </a>
+
+  <script>
+    const header = document.getElementById("header");
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    window.addEventListener("scroll", () => {
+      header.classList.toggle("scrolled", window.scrollY > 30);
+    }, { passive: true });
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("open");
+    });
+
+    mobileMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+      });
+    });
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.08 }
+    );
+
+    document.querySelectorAll(".reveal").forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
